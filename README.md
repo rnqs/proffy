@@ -54,17 +54,29 @@ $ yarn start
 
 ### API
 
-🚧  Em construção...  🚧
+No diretório `server` execute os comandos:
+
+```sh
+# Instale os pacotes necessários
+$ yarn
+
+# Execute as migrations do banco de dados SQLite
+$ yarn knex:migrate
+
+# Execute a API
+$ yarn start
+```
 
 ### Aplicação Mobile
 
-🚧  Em construção...  🚧
+🚧 Em construção... 🚧
 
 ## :art: Design
 
 O design da aplicação foi desenvolvido no Figma pela Rocketseat e pode ser acessado através dos links abaixo:
- - [Web](https://www.figma.com/file/GHGS126t7WYjnPZdRKChJF/Proffy-Web)
- - [Mobile](https://www.figma.com/file/e33KvgUpFdunXxJjHnK7CG/Proffy-Mobile)
+
+- [Web](https://www.figma.com/file/GHGS126t7WYjnPZdRKChJF/Proffy-Web)
+- [Mobile](https://www.figma.com/file/e33KvgUpFdunXxJjHnK7CG/Proffy-Mobile)
 
 ## :book: Tecnologias
 
@@ -79,15 +91,17 @@ As principais ferramentas utilizadas no desenvolvimento do projeto
 
 ### API
 
-🚧  Em construção...  🚧
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [Knex.js](https://knexjs.org/)
 
 #### Banco de Dados
 
-🚧  Em construção...  🚧
+- [SQLite](https://sqlite.org/)
 
 ### Aplicação Mobile
 
-🚧  Em construção...  🚧
+🚧 Em construção... 🚧
 
 ## :rocket: Deploy
 
@@ -97,11 +111,11 @@ A [aplicação web](https://proffy-nlw2.netlify.app) foi hospedada no [Netlify](
 
 ### API
 
-🚧  Em construção...  🚧
+🚧 Ainda não realizado... 🚧
 
 ### Aplicação Mobile
 
-🚧  Em construção...  🚧
+🚧 Em construção... 🚧
 
 ## :memo: Licença
 
