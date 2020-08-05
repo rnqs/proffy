@@ -1,17 +1,51 @@
-import React from 'react'
+import React, { useState, FormEvent } from 'react'
+
+import api from '../../services/api'
 
 import Input from '../../components/Input'
 import Select from '../../components/Select'
 import Header from '../../components/Header'
 import TeacherItem from '../../components/TeacherItem'
 
+import searchIcon from '../../assets/images/icons/search.svg'
+
 import './styles.css'
 
+interface Proffy {
+  id: number
+  bio: string
+  name: string
+  cost: number
+  avatar: string
+  subject: string
+  whatsapp: string
+}
+
 const TeacherList: React.FC = () => {
+  const [subject, setSubject] = useState('')
+  const [week_day, setWeek_day] = useState('')
+  const [time, setTime] = useState('')
+
+  const [proffys, setProffys] = useState([])
+
+  const searchTeachers = async (e: FormEvent) => {
+    e.preventDefault()
+
+    const response = await api.get('/classes', {
+      params: {
+        subject,
+        week_day,
+        time
+      }
+    })
+
+    setProffys(response.data)
+  }
+
   return (
     <div id="page-teacher-list">
       <Header title='Esses são os proffys disponíveis.'>
-        <form id="search-teachers">
+        <form id="search-teachers" onSubmit={searchTeachers}>
           <Select
             name="subject"
             label="Metéria"
@@ -31,6 +65,8 @@ const TeacherList: React.FC = () => {
               { value: 'Química', label: 'Química' },
               { value: 'Sociologia', label: 'Sociologia' }
             ]}
+            value={subject}
+            onChange={e => setSubject(e.target.value)}
           />
           <Select
             name="week-day"
@@ -44,15 +80,27 @@ const TeacherList: React.FC = () => {
               { value: '5', label: 'Sexta-feira' },
               { value: '6', label: 'Sábado' },
             ]}
+            value={week_day}
+            onChange={e => setWeek_day(e.target.value)}
           />
-          <Input name="time" type="time" label="Hora" />
+          <Input
+            name="time"
+            type="time"
+            label="Hora"
+            value={time}
+            onChange={e => setTime(e.target.value)}
+          />
+
+          <button type="submit">
+            <img src={searchIcon} alt="Buscar" />
+          </button>
         </form>
       </Header>
 
       <main>
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
+        {
+          proffys.map(((proffy: Proffy) => <TeacherItem key={proffy.id} teacher={proffy} />))
+        }
       </main>
     </div>
   )
