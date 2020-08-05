@@ -120,6 +120,11 @@
     column-gap: 1.6rem;
   }
 
+  #page-teacher-form main .schedule-item.hide-labels .input-block label,
+  #page-teacher-form main .schedule-item.hide-labels .select-block label {
+    display: none;
+  }
+
   #page-teacher-form main .schedule-item .input-block {
     margin-top: 0 !important;
   }
