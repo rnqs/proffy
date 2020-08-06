@@ -69,7 +69,21 @@ $ yarn start
 
 ### Aplicação Mobile
 
-🚧 Em construção... 🚧
+O [Expo CLI](https://docs.expo.io/workflow/expo-cli/) é necessário para executar a aplicação mobile para instalar execute o comando:
+
+```sh
+$ npm install --global expo-cli
+```
+
+No diretório `mobile` execute os comandos:
+
+```sh
+# Instale os pacotes necessários
+$ yarn
+
+# Execute a aplicação mobile
+$ yarn start
+```
 
 ## :art: Design
 
@@ -101,7 +115,9 @@ As principais ferramentas utilizadas no desenvolvimento do projeto
 
 ### Aplicação Mobile
 
-🚧 Em construção... 🚧
+- [React Native](https://facebook.github.io/react-native/)
+- [Expo](https://expo.io/)
+- [React Navigation](https://reactnavigation.org/)
 
 ## :rocket: Deploy
 
@@ -115,7 +131,7 @@ A [aplicação web](https://proffy-nlw2.netlify.app) foi hospedada no [Netlify](
 
 ### Aplicação Mobile
 
-🚧 Em construção... 🚧
+🚧 Ainda não realizado... 🚧
 
 ## :memo: Licença
 
