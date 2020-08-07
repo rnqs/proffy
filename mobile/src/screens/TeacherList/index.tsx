@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import { View, ScrollView, Text, TextInput } from 'react-native'
 import { BorderlessButton, RectButton } from 'react-native-gesture-handler'
@@ -25,12 +25,12 @@ const TeacherList: React.FC = () => {
   const loadFavorites = () => {
     AsyncStorage.getItem('favorites').then(response => {
       if (response) {
-        const favoritedTeachers = JSON.parse(response)
-        const favoritedTeachersIds = favoritedTeachers.map((teacher: Teacher) => {
+        const isFavoriteTeachers = JSON.parse(response)
+        const isFavoriteTeachersIds = isFavoriteTeachers.map((teacher: Teacher) => {
           return teacher.id
         })
 
-        setFavorites(favoritedTeachersIds)
+        setFavorites(isFavoriteTeachersIds)
       }
     })
   }
@@ -114,17 +114,21 @@ const TeacherList: React.FC = () => {
       </Title>
 
       <View style={styles.teachersContainer}>
-        {
-          teachers.map((teacher: Teacher) => {
-            return (
-              <TeacherItem
-                key={teacher.id}
-                teacher={teacher}
-                favorite={favorites.includes(teacher.id)}
-              />
-            )
-          })
-        }
+        <View style={styles.teachers}>
+          {
+            teachers.map((teacher: Teacher) => {
+              return (
+                <View key={teacher.id} style={styles.teacherItemContainer}>
+                  <TeacherItem
+                    key={teacher.id}
+                    teacher={teacher}
+                    favorite={favorites.includes(teacher.id)}
+                  />
+                </View>
+              )
+            })
+          }
+        </View>
       </View>
     </ScrollView>
   )

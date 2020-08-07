@@ -1,34 +1,67 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
+
 import colors from '../../assets/colors'
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.primary,
-    padding: 40,
+    backgroundColor: Platform.OS === 'ios' ? colors.primary : colors.background,
   },
 
-  title: {
-    fontFamily: 'Archivo_700Bold',
-    color: colors.titleInPrimary,
-    fontSize: 32,
-    lineHeight: 37,
-    maxWidth: 180,
-  },
-
-  description: {
-    marginTop: 24,
-    color: colors.textInPrimary,
-    fontSize: 16,
-    lineHeight: 26,
-    fontFamily: 'Poppins_400Regular',
-    maxWidth: 240,
-  },
-
-  test: {
-    width: '100%',
-    height: 150,
+  teachersContainer: {
+    minHeight: '70%',
     backgroundColor: colors.background,
+  },
+
+  teacherItemContainer: {
+    padding: 16,
+  },
+
+  teachers: {
+    marginTop: -40,
+  },
+
+  searchForm: {
+    marginBottom: 24,
+  },
+
+  label: {
+    color: colors.textInPrimary,
+    fontFamily: 'Poppins_400Regular',
+  },
+
+  inputGroup: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+
+  inputBlock: {
+    width: '48%',
+  },
+
+  input: {
+    height: 54,
+    backgroundColor: colors.inputBackground,
+    borderRadius: 8,
+    justifyContent: 'center',
+    paddingHorizontal: 16,
+    marginTop: 4,
+    marginBottom: 16,
+  },
+
+  submitButton: {
+    backgroundColor: colors.secondary,
+    height: 56,
+    borderRadius: 8,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  submitButtonText: {
+    color: colors.buttonText,
+    fontFamily: 'Archivo_700Bold',
+    fontSize: 16,
   },
 })
 

@@ -9,11 +9,15 @@ const styles = StyleSheet.create({
   },
 
   teachersContainer: {
-    paddingBottom: '200%',
+    minHeight: '70%',
     backgroundColor: colors.background,
   },
 
-  teacherList: {
+  teacherItemContainer: {
+    padding: 16,
+  },
+
+  teachers: {
     marginTop: -40,
   },
 
